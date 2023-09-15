@@ -1,0 +1,9 @@
+{
+    "NOT_EMPTY": "{property} cannot be empty",
+    "INVALID_UUID": "{property} must be a V4 uuid",
+    "INVALID_STRING": "{property} is not text",
+    "INVALID_NUMBER_STRING": "{property} is not a text type number",
+    "INVALID_EMAIL": "email is invalid",
+    "INVALID_BOOLEAN": "{property} is not a boolean",
+    "INVALID_MAX_LENGTH": "{property} with value: \"{value}\" needs to be less than {constraints.0}"
+  }
