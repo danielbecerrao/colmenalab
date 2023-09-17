@@ -41,8 +41,8 @@ export class PatientsService {
   }
 
   public async findOne(id: string): Promise<Patient | null> {
-    return this.patientRepository.findOne({
-      where: { id },
+    return this.patientRepository.findOneBy({
+      id,
     });
   }
 

@@ -62,7 +62,7 @@ export class DoctorsService {
     if (!doctor)
       throw new NotFoundException('Error al actualizar doctor', {
         cause: new Error(),
-        description: 'Paciente no encontrado por id',
+        description: 'Doctor no encontrado por id',
       });
     if (
       updateDoctorDto.identification &&
@@ -85,7 +85,7 @@ export class DoctorsService {
     if (!doctor)
       throw new NotFoundException('Error al eliminar doctor', {
         cause: new Error(),
-        description: 'Paciente no encontrado por id',
+        description: 'Doctor no encontrado por id',
       });
     return this.doctorRepository.softRemove(doctor);
   }

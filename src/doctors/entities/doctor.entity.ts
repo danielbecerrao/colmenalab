@@ -1,8 +1,10 @@
+import { Appointment } from 'src/appointments/entities/appointment.entity';
 import {
   Column,
   CreateDateColumn,
   DeleteDateColumn,
   Entity,
+  OneToMany,
   PrimaryGeneratedColumn,
   Unique,
   UpdateDateColumn,
@@ -75,4 +77,10 @@ export class Doctor {
 
   @DeleteDateColumn()
   public readonly deletedAt!: Date;
+
+  @OneToMany(
+    () => Appointment,
+    (appointment: Appointment) => appointment.doctor,
+  )
+  public appointments!: Appointment[];
 }

@@ -6,7 +6,14 @@ import { DoctorsModule } from './doctors/doctors.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { ThrottlerModule } from '@nestjs/throttler';
-
+import { AppointmentsModule } from './appointments/appointments.module';
+import { SchedulesModule } from './schedules/schedules.module';
+import { OrdersModule } from './orders/orders.module';
+import { MedicinesModule } from './medicines/medicines.module';
+import { DiseasesModule } from './diseases/diseases.module';
+import { DiseaseToMedicineModule } from './disease-to-medicine/disease-to-medicine.module';
+import { OrderToMedicineModule } from './order-to-medicine/order-to-medicine.module';
+import { SpecialtiesModule } from './specialties/specialties.module';
 @Module({
   imports: [
     ConfigModule.forRoot({
@@ -44,6 +51,14 @@ import { ThrottlerModule } from '@nestjs/throttler';
     }),
     DoctorsModule,
     PatientsModule,
+    AppointmentsModule,
+    SchedulesModule,
+    OrdersModule,
+    MedicinesModule,
+    DiseasesModule,
+    DiseaseToMedicineModule,
+    OrderToMedicineModule,
+    SpecialtiesModule,
   ],
   controllers: [],
   providers: [],
