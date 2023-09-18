@@ -1,4 +1,4 @@
-import { Appointment } from 'src/appointments/entities/appointment.entity';
+import { Appointment } from '../../appointments/entities/appointment.entity';
 import {
   Column,
   CreateDateColumn,
@@ -76,7 +76,7 @@ export class Doctor {
   public readonly updatedAt!: Date;
 
   @DeleteDateColumn()
-  public readonly deletedAt!: Date;
+  public readonly deletedAt!: Date | null;
 
   @OneToMany(
     () => Appointment,

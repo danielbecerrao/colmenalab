@@ -3,7 +3,7 @@ import { MedicinesService } from './medicines.service';
 import { CreateMedicineDto } from './dto/create-medicine.dto';
 import { UpdateMedicineDto } from './dto/update-medicine.dto';
 import type { Medicine } from './entities/medicine.entity';
-import { FindOneUuidMedicineDto } from './dto/find-one-uuid-medicine.dto';
+import { FindOneMedicineDto } from './dto/find-one-medicine.dto';
 import { ApiTags } from '@nestjs/swagger';
 
 @Controller('medicines')
@@ -25,14 +25,14 @@ export class MedicinesController {
 
   @Get(':id')
   public async findOne(
-    findOneUuidMedicineDto: FindOneUuidMedicineDto,
+    findOneUuidMedicineDto: FindOneMedicineDto,
   ): Promise<Medicine | null> {
     return this.medicinesService.findOne(findOneUuidMedicineDto.id);
   }
 
   @Patch(':id')
   public async update(
-    findOneUuidMedicineDto: FindOneUuidMedicineDto,
+    findOneUuidMedicineDto: FindOneMedicineDto,
     @Body() updateMedicineDto: UpdateMedicineDto,
   ): Promise<Medicine> {
     return this.medicinesService.update(
@@ -43,7 +43,7 @@ export class MedicinesController {
 
   @Delete(':id')
   public async remove(
-    findOneUuidMedicineDto: FindOneUuidMedicineDto,
+    findOneUuidMedicineDto: FindOneMedicineDto,
   ): Promise<Medicine> {
     return this.medicinesService.remove(findOneUuidMedicineDto.id);
   }

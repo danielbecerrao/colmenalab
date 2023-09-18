@@ -1,5 +1,5 @@
-import { Order } from 'src/orders/entities/order.entity';
-import { Medicine } from 'src/medicines/entities/medicine.entity';
+import { Order } from '../../orders/entities/order.entity';
+import { Medicine } from '../../medicines/entities/medicine.entity';
 import {
   Column,
   CreateDateColumn,
@@ -34,5 +34,5 @@ export class OrderToMedicine {
   public readonly updatedAt!: Date;
 
   @DeleteDateColumn()
-  public readonly deletedAt!: Date;
+  public readonly deletedAt!: Date | null;
 }

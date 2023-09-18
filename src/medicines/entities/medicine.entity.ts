@@ -1,5 +1,5 @@
-import { DiseaseToMedicine } from 'src/disease-to-medicine/entities/disease-to-medicine.entity';
-import { OrderToMedicine } from 'src/order-to-medicine/entities/order-to-medicine.entity';
+import { DiseaseToMedicine } from '../../disease-to-medicine/entities/disease-to-medicine.entity';
+import { OrderToMedicine } from '../../order-to-medicine/entities/order-to-medicine.entity';
 import {
   Column,
   CreateDateColumn,
@@ -27,7 +27,7 @@ export class Medicine {
   public readonly updatedAt!: Date;
 
   @DeleteDateColumn()
-  public readonly deletedAt!: Date;
+  public readonly deletedAt!: Date | null;
 
   @OneToMany(
     () => DiseaseToMedicine,

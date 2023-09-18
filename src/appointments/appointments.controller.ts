@@ -13,7 +13,7 @@ import { CreateAppointmentDto } from './dto/create-appointment.dto';
 import { UpdateAppointmentDto } from './dto/update-appointment.dto';
 import type { Appointment } from './entities/appointment.entity';
 import { ApiTags } from '@nestjs/swagger';
-import { FindOneUuidAppointmentDto } from './dto/find-one-uuid-appointment.dto';
+import { FindOneAppointmentDto } from './dto/find-one-appointment.dto';
 import { FindAppointmentsDto } from './dto/find-appointments.dto';
 
 @Controller('appointments')
@@ -48,14 +48,14 @@ export class AppointmentsController {
 
   @Get(':id')
   public async findOne(
-    @Param() findOneUuidAppointmentDto: FindOneUuidAppointmentDto,
+    @Param() findOneUuidAppointmentDto: FindOneAppointmentDto,
   ): Promise<Appointment | null> {
     return this.appointmentsService.findOne(findOneUuidAppointmentDto.id);
   }
 
   @Patch(':id')
   public async update(
-    @Param() findOneUuidAppointmentDto: FindOneUuidAppointmentDto,
+    @Param() findOneUuidAppointmentDto: FindOneAppointmentDto,
     @Body() updateAppointmentDto: UpdateAppointmentDto,
   ): Promise<Appointment> {
     return this.appointmentsService.update(
@@ -66,7 +66,7 @@ export class AppointmentsController {
 
   @Delete(':id')
   public async remove(
-    @Param() findOneUuidAppointmentDto: FindOneUuidAppointmentDto,
+    @Param() findOneUuidAppointmentDto: FindOneAppointmentDto,
   ): Promise<Appointment> {
     return this.appointmentsService.remove(findOneUuidAppointmentDto.id);
   }

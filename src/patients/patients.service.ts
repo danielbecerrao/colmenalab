@@ -49,9 +49,7 @@ export class PatientsService {
   public async findOneByIdentification(
     identification: string,
   ): Promise<Patient | null> {
-    return this.patientRepository.findOne({
-      where: { identification },
-    });
+    return this.patientRepository.findOneBy({ identification });
   }
 
   public async update(

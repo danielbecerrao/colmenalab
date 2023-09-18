@@ -7,10 +7,10 @@ import { Repository } from 'typeorm';
 export class SchedulesService {
   public constructor(
     @InjectRepository(Schedule)
-    private readonly doctorRepository: Repository<Schedule>,
+    private readonly scheduleRepository: Repository<Schedule>,
   ) {}
 
   public async findAll(): Promise<Schedule[]> {
-    return this.doctorRepository.find();
+    return this.scheduleRepository.find();
   }
 }

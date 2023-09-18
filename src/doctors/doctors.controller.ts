@@ -12,7 +12,7 @@ import { CreateDoctorDto } from './dto/create-doctor.dto';
 import { UpdateDoctorDto } from './dto/update-doctor.dto';
 import { ApiTags } from '@nestjs/swagger';
 import type { Doctor } from './entities/doctor.entity';
-import { FindOneUuidDoctorDto } from './dto/find-one-uuid-doctor.dto';
+import { FindOneDoctorDto } from './dto/find-one-doctor.dto';
 
 @Controller('doctors')
 @ApiTags('Médicos')
@@ -33,14 +33,14 @@ export class DoctorsController {
 
   @Get(':id')
   public async findOne(
-    @Param() findOneUuidDoctorDto: FindOneUuidDoctorDto,
+    @Param() findOneUuidDoctorDto: FindOneDoctorDto,
   ): Promise<Doctor | null> {
     return this.doctorsService.findOne(findOneUuidDoctorDto.id);
   }
 
   @Patch(':id')
   public async update(
-    @Param() findOneUuidDoctorDto: FindOneUuidDoctorDto,
+    @Param() findOneUuidDoctorDto: FindOneDoctorDto,
     @Body() updateDoctorDto: UpdateDoctorDto,
   ): Promise<Doctor> {
     return this.doctorsService.update(findOneUuidDoctorDto.id, updateDoctorDto);
@@ -48,7 +48,7 @@ export class DoctorsController {
 
   @Delete(':id')
   public async remove(
-    @Param() findOneUuidDoctorDto: FindOneUuidDoctorDto,
+    @Param() findOneUuidDoctorDto: FindOneDoctorDto,
   ): Promise<Doctor> {
     return this.doctorsService.remove(findOneUuidDoctorDto.id);
   }

@@ -41,17 +41,13 @@ export class DoctorsService {
   }
 
   public async findOne(id: string): Promise<Doctor | null> {
-    return this.doctorRepository.findOne({
-      where: { id },
-    });
+    return this.doctorRepository.findOneBy({ id });
   }
 
   public async findOneByIdentification(
     identification: string,
   ): Promise<Doctor | null> {
-    return this.doctorRepository.findOne({
-      where: { identification },
-    });
+    return this.doctorRepository.findOneBy({ identification });
   }
 
   public async update(

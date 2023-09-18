@@ -31,7 +31,7 @@ export class Schedule {
   public readonly updatedAt!: Date;
 
   @DeleteDateColumn()
-  public readonly deletedAt!: Date;
+  public readonly deletedAt!: Date | null;
 
   @OneToMany(
     () => Appointment,

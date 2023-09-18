@@ -1,4 +1,4 @@
-import { Order } from 'src/orders/entities/order.entity';
+import { Order } from '../../orders/entities/order.entity';
 import {
   Column,
   CreateDateColumn,
@@ -26,7 +26,7 @@ export class Specialty {
   public readonly updatedAt!: Date;
 
   @DeleteDateColumn()
-  public readonly deletedAt!: Date;
+  public readonly deletedAt!: Date | null;
 
   @OneToMany(() => Order, (order: Order) => order.specialty)
   public orders!: Order[];

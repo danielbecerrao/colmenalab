@@ -3,7 +3,7 @@ import { SpecialtiesService } from './specialties.service';
 import { CreateSpecialtyDto } from './dto/create-specialty.dto';
 import { UpdateSpecialtyDto } from './dto/update-specialty.dto';
 import type { Specialty } from './entities/specialty.entity';
-import { FindOneUuidSpecialtyDto } from './dto/find-one-uuid-specialty.dto';
+import { FindOneSpecialtyDto } from './dto/find-one-specialty.dto';
 import { ApiTags } from '@nestjs/swagger';
 
 @Controller('specialties')
@@ -25,14 +25,14 @@ export class SpecialtiesController {
 
   @Get(':id')
   public async findOne(
-    findOneUuidSpecialtyDto: FindOneUuidSpecialtyDto,
+    findOneUuidSpecialtyDto: FindOneSpecialtyDto,
   ): Promise<Specialty | null> {
     return this.specialtiesService.findOne(findOneUuidSpecialtyDto.id);
   }
 
   @Patch(':id')
   public async update(
-    findOneUuidSpecialtyDto: FindOneUuidSpecialtyDto,
+    findOneUuidSpecialtyDto: FindOneSpecialtyDto,
     @Body() updateSpecialtyDto: UpdateSpecialtyDto,
   ): Promise<Specialty> {
     return this.specialtiesService.update(
@@ -43,7 +43,7 @@ export class SpecialtiesController {
 
   @Delete(':id')
   public async remove(
-    findOneUuidSpecialtyDto: FindOneUuidSpecialtyDto,
+    findOneUuidSpecialtyDto: FindOneSpecialtyDto,
   ): Promise<Specialty> {
     return this.specialtiesService.remove(findOneUuidSpecialtyDto.id);
   }

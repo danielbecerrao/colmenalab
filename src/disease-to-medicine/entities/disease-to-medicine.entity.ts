@@ -1,5 +1,5 @@
-import { Disease } from 'src/diseases/entities/disease.entity';
-import { Medicine } from 'src/medicines/entities/medicine.entity';
+import { Disease } from '../../diseases/entities/disease.entity';
+import { Medicine } from '../../medicines/entities/medicine.entity';
 import {
   Column,
   CreateDateColumn,
@@ -34,5 +34,5 @@ export class DiseaseToMedicine {
   public readonly updatedAt!: Date;
 
   @DeleteDateColumn()
-  public readonly deletedAt!: Date;
+  public readonly deletedAt!: Date | null;
 }

@@ -9,10 +9,10 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Appointment } from './entities/appointment.entity';
 import type { SelectQueryBuilder } from 'typeorm';
 import { Repository } from 'typeorm';
-import { PatientsService } from 'src/patients/patients.service';
-import { DoctorsService } from 'src/doctors/doctors.service';
-import type { Doctor } from 'src/doctors/entities/doctor.entity';
-import type { Patient } from 'src/patients/entities/patient.entity';
+import { PatientsService } from '../patients/patients.service';
+import { DoctorsService } from '../doctors/doctors.service';
+import type { Doctor } from '../doctors/entities/doctor.entity';
+import type { Patient } from '../patients/entities/patient.entity';
 
 @Injectable()
 export class AppointmentsService {
@@ -23,7 +23,7 @@ export class AppointmentsService {
     private readonly patientsService: PatientsService,
   ) {}
 
-  private async doctorAvailability(
+  public async doctorAvailability(
     doctorId: string,
     date: Date,
     scheduleId: string,
@@ -39,7 +39,7 @@ export class AppointmentsService {
     return !appointment;
   }
 
-  private async patientAvailability(
+  public async patientAvailability(
     patientId: string,
     date: Date,
     scheduleId: string,
@@ -202,7 +202,7 @@ export class AppointmentsService {
     if (!appointment)
       throw new NotFoundException('Error al eliminar cita', {
         cause: new Error(),
-        description: 'Paciente no encontrado por id',
+        description: 'Cita no encontrada por id',
       });
     return this.appointmentRepository.softRemove(appointment);
   }

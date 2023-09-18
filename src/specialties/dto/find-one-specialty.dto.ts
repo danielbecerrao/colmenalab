@@ -1,7 +1,7 @@
 import { IsUUID } from 'class-validator';
 import { i18nValidationMessage } from 'nestjs-i18n';
 
-export class FindOneUuidPatientDto {
+export class FindOneSpecialtyDto {
   @IsUUID('4', { message: i18nValidationMessage('validation.INVALID_UUID') })
   public id!: string;
 }

@@ -11,7 +11,7 @@ import { DiseasesService } from './diseases.service';
 import { CreateDiseaseDto } from './dto/create-disease.dto';
 import { UpdateDiseaseDto } from './dto/update-disease.dto';
 import type { Disease } from './entities/disease.entity';
-import { FindOneUuidDiseaseDto } from './dto/find-one-uuid-disease.dto';
+import { FindOneDiseaseDto } from './dto/find-one-disease.dto';
 import { ApiTags } from '@nestjs/swagger';
 
 @Controller('diseases')
@@ -33,14 +33,14 @@ export class DiseasesController {
 
   @Get(':id')
   public async findOne(
-    @Param() findOneUuidDiseaseDto: FindOneUuidDiseaseDto,
+    @Param() findOneUuidDiseaseDto: FindOneDiseaseDto,
   ): Promise<Disease | null> {
     return this.diseasesService.findOne(findOneUuidDiseaseDto.id);
   }
 
   @Patch(':id')
   public async update(
-    @Param() findOneUuidDiseaseDto: FindOneUuidDiseaseDto,
+    @Param() findOneUuidDiseaseDto: FindOneDiseaseDto,
     @Body() updateDiseaseDto: UpdateDiseaseDto,
   ): Promise<Disease> {
     return this.diseasesService.update(
@@ -51,7 +51,7 @@ export class DiseasesController {
 
   @Delete(':id')
   public async remove(
-    @Param() findOneUuidDiseaseDto: FindOneUuidDiseaseDto,
+    @Param() findOneUuidDiseaseDto: FindOneDiseaseDto,
   ): Promise<Disease> {
     return this.diseasesService.remove(findOneUuidDiseaseDto.id);
   }

@@ -55,7 +55,7 @@ export class MedicinesService {
     if (!medicine)
       throw new NotFoundException('Error al actualizar medicamento', {
         cause: new Error(),
-        description: 'Enfermedad no encontrada por id',
+        description: 'Medicamento no encontrado por id',
       });
     return this.medicineRepository.save(
       Object.assign(medicine, updateMedicineDto),

@@ -1,0 +1,6 @@
+projectKey=colmena
+serverUrl=http://localhost:9010
+serverVersion=9.9.0.65466
+dashboardUrl=http://localhost:9010/dashboard?id=colmena
+ceTaskId=AYqnBYLPekWcZ5pwFGf7
+ceTaskUrl=http://localhost:9010/api/ce/task?id=AYqnBYLPekWcZ5pwFGf7

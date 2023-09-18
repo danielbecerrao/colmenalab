@@ -1,6 +1,6 @@
-import { Appointment } from 'src/appointments/entities/appointment.entity';
-import { OrderToMedicine } from 'src/order-to-medicine/entities/order-to-medicine.entity';
-import { Specialty } from 'src/specialties/entities/specialty.entity';
+import { Appointment } from '../../appointments/entities/appointment.entity';
+import { OrderToMedicine } from '../../order-to-medicine/entities/order-to-medicine.entity';
+import { Specialty } from '../../specialties/entities/specialty.entity';
 import {
   Column,
   CreateDateColumn,
@@ -47,7 +47,7 @@ export class Order {
   public readonly updatedAt!: Date;
 
   @DeleteDateColumn()
-  public readonly deletedAt!: Date;
+  public readonly deletedAt!: Date | null;
 
   @OneToMany(
     () => OrderToMedicine,

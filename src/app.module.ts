@@ -39,11 +39,11 @@ import { SpecialtiesModule } from './specialties/specialties.module';
     TypeOrmModule.forRootAsync({
       useFactory: (configService: ConfigService) => ({
         type: 'postgres',
-        host: configService.getOrThrow<string>('HOST'),
-        port: configService.getOrThrow<number>('PORT_DB'),
-        username: configService.getOrThrow<string>('USERNAME_DB'),
-        password: configService.getOrThrow<string>('PASSWORD_DB'),
-        database: configService.getOrThrow<string>('DATABASE'),
+        host: configService.getOrThrow<string>('DB_HOST'),
+        port: configService.getOrThrow<number>('POSTGRES_PORT'),
+        username: configService.getOrThrow<string>('POSTGRES_USER'),
+        password: configService.getOrThrow<string>('POSTGRES_PASSWORD'),
+        database: configService.getOrThrow<string>('POSTGRES_DB'),
         autoLoadEntities: configService.getOrThrow<boolean>('AUTOLOADENTITIES'),
         synchronize: configService.getOrThrow<boolean>('SYNCHRONIZE'),
       }),

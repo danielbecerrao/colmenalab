@@ -1,5 +1,5 @@
-import { Doctor } from 'src/doctors/entities/doctor.entity';
-import { Patient } from 'src/patients/entities/patient.entity';
+import { Doctor } from '../../doctors/entities/doctor.entity';
+import { Patient } from '../../patients/entities/patient.entity';
 import {
   Column,
   CreateDateColumn,
@@ -13,7 +13,7 @@ import {
 } from 'typeorm';
 import { Status } from '../enums/status.enum';
 import { Schedule } from '../../schedules/entities/schedule.entity';
-import { Order } from 'src/orders/entities/order.entity';
+import { Order } from '../../orders/entities/order.entity';
 
 @Entity('appointments')
 @Unique(['doctorId', 'date', 'scheduleId'])
@@ -59,7 +59,7 @@ export class Appointment {
   public readonly updatedAt!: Date;
 
   @DeleteDateColumn()
-  public readonly deletedAt!: Date;
+  public readonly deletedAt!: Date | null;
 
   @OneToMany(() => Order, (order: Order) => order.appointment)
   public orders!: Order[];

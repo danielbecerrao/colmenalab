@@ -3,7 +3,7 @@ import { OrdersService } from './orders.service';
 import { CreateOrderDto } from './dto/create-order.dto';
 import { UpdateOrderDto } from './dto/update-order.dto';
 import type { Order } from './entities/order.entity';
-import { FindOneUuidOrderDto } from './dto/find-one-uuid-order.dto';
+import { FindOneOrderDto } from './dto/find-one-order.dto';
 import { ApiTags } from '@nestjs/swagger';
 
 @Controller('orders')
@@ -23,14 +23,14 @@ export class OrdersController {
 
   @Get(':id')
   public async findOne(
-    findOneUuidOrderDto: FindOneUuidOrderDto,
+    findOneUuidOrderDto: FindOneOrderDto,
   ): Promise<Order | null> {
     return this.ordersService.findOne(findOneUuidOrderDto.id);
   }
 
   @Patch(':id')
   public async update(
-    findOneUuidOrderDto: FindOneUuidOrderDto,
+    findOneUuidOrderDto: FindOneOrderDto,
     @Body() updateOrderDto: UpdateOrderDto,
   ): Promise<Order> {
     return this.ordersService.update(findOneUuidOrderDto.id, updateOrderDto);
@@ -38,7 +38,7 @@ export class OrdersController {
 
   @Delete(':id')
   public async remove(
-    findOneUuidOrderDto: FindOneUuidOrderDto,
+    findOneUuidOrderDto: FindOneOrderDto,
   ): Promise<Order> {
     return this.ordersService.remove(findOneUuidOrderDto.id);
   }
