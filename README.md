@@ -56,7 +56,8 @@ $ docker compose up
 # modo detached
 $ docker compose up -d
 ```
-
+## Swagger
+Puede acceder a la documentación Swagger en /api la cual le proporcionará todos los métodos y ejemplos de las peticiones http de la aplicación
 ## Test
 
 ```bash
