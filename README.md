@@ -22,17 +22,18 @@
   <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
   [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-## Description
+## Descripción
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+[Nest](https://github.com/nestjs/nest) App colmena lab
 
-## Installation
+## Instalación
 
 ```bash
 $ npm install
 ```
-
-## Running the app
+Copie el archivo .env.example como .env y modifique las variables de entorno de acuerdo a sus necesidades.
+Cree la base de datos e importe el archivo colmenalab.sql que se encuentra en la carpeta database, también puede configurar el parámetro SYNCHRONIZE en true en las variables de entorno para que cree automáticamente las  tablas de la base de datos (Solo se recomienda en modo desarrollo, en producción debe estar en false) y crear los registros en la tabla schedule.
+## Ejecutar la aplicación localmente
 
 ```bash
 # development
@@ -43,6 +44,17 @@ $ npm run start:dev
 
 # production mode
 $ npm run start:prod
+```
+
+## Ejecutar la aplicación en docker
+
+
+```bash
+# primer plano
+$ docker compose up
+
+# modo detached
+$ docker compose up -d
 ```
 
 ## Test
